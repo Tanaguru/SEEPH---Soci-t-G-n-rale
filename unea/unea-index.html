@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<!-- ajout d'un doctype html 5, suppression de xmlns et xml:lang sur l'élément html -->
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<!-- déplacement des éléments title, meta, link et script présents en début de l'élément body vers head -->
+		<title>UNEA - Union Nationale des Entreprises Adaptées</title>
+		<meta name="description" content="UNEA - Union Nationale des Entreprises Adaptées">
+		<meta name="keywords" content="">
+		<!-- <meta http-equiv="content-style-type" content="text/css"> meta non reconnue -->
+		<link rel="stylesheet" href="unea-index/styles-pages.css" type="text/css">
+		<script type="text/javascript" async="" src="unea-index/ga.js"></script>
+		<script type="text/javascript" src="unea-index/jquery-1.js"></script>
+		<script type="text/javascript" src="unea-index/jquery.js"></script>
+		<script type="text/javascript" src="unea-index/functions.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			
+				/** Carrousel Actualités **/
+				$("#car_home").scrollable({speed : 700}).navigator();
+				
+				/** Carrousel Partenaires **/
+				$("#scroller").scrollable({circular: true , speed : 1000}).autoscroll({ autoplay: true , interval : 4000});
+				
+				/** Sous-navigation **/
+				$(".sousnav_n1").hover(function() {
+					$(this).addClass("on");
+					$(this).children(".ctn_sousnav").fadeIn("fast");
+				}, function() {
+					$(this).removeClass("on");
+					$(this).children(".ctn_sousnav").fadeOut("fast");
+				});
+				$(".sousnav_n2").hover(function() {
+					$(this).addClass("on");
+					$(this).children("ul").fadeIn("fast");
+				},function() {
+					$(this).removeClass("on");
+					$(this).children("ul").fadeOut("fast");
+				});
+				
+			});
+		</script>
+		<!-- height="50" remplacés sur les img, width="15px" sur un élément img pareil -->
+		<style type="text/css">
+			.sr-only {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				padding: 0;
+				margin: -1px;
+				overflow: hidden;
+				clip: rect(0,0,0,0);
+				border: 0;
+			}
+			#skiplinks {
+				font-size: 0.8em;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			#skiplinks li {
+				display: inline-block;
+				padding-right: 10px;
+			}
+			.align-left {
+				text-align: left;
+			}
+			.align-right {
+				text-align: right;
+			}
+			.border-0 {
+				border: none;
+			}
+			.hspace-5 {
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+			.ctn_links {
+				float: left; /* liens du banner placés avant la zone de recherche */
+			}
+			.ctn_visuel img.align-left {
+				float: left;
+				padding: 0 5px;
+			}
+		</style>
+	</head>
+	<body>﻿
+		<form method="post" name="formADW" id="formADW">
+			<div class="str_conteneur" style="width: 980px;">
+				<ul id="skiplinks">
+					<li><a href="#navigation">Aller au menu de navigation</a></li>
+					<li><a href="#main">Aller au contenu principal</a></li>
+					<li><a href="#search">Aller à la zone de recherche</a></li>
+				</ul>
+				<!-- définition du header -->
+				<header role="banner" class="str_header clearfix">
+					<!-- pertinence intitulé (amélioré + title) -->
+					<div class="ctn_logo"><a href="http://www.unea.fr/index.php"><img src="unea-index/a_logo.gif" alt="Retour à l'accueil de l'UNEA (Union Nationale des Entreprises Adaptées)" title="Retour à l'accueil de l'UNEA (Union Nationale des Entreprises Adaptées)"></a></div>
+					<div class="str-links clearfix">
+						<!-- déplacement des liens avant la zone de recherche + structuration par liste -->
+						<div class="ctn_links clearfix">
+							<!-- <a href="javascript:window.open('identification.php',%20'IDENTIFICATION',%20'width=600,height=400');"> </a> lien vide supprimé -->
+							<ul>
+								<li><a href="http://unea.fr/union-nationale-entreprises-adaptees/contact/11/11/contact.htm" class="i_contacts">Contacts</a></li>
+								<li><a href="http://unea.fr/union-nationale-entreprises-adaptees/liste-des-newsletters/160/160/liste-des-newsletters.htm" class="i_newsletters">Newsletters</a></li>
+								<li><!-- ajout mention ouvrir une nouvelle fenetre --><a href="http://www.unea.fr/adw-newsletter.php" target="_blank" class="i_newsletters" title="Recevez notre newsletter (nouvelle fenêtre)">Recevez notre newsletter</a></li>
+							</ul>
+						</div>
+						<!-- définition de la zone de recherche -->
+						<div id="search" role="search" class="ctn_searchbox clearfix" tabindex="-1">
+							<!-- ajout d'une étiquette -->
+							<input id="idRech" name="idRech" aria-label="Rechercher dans le site" value="Rechercher dans le site..." onfocus="javascript:this.value=''" type="text">
+							<!-- intitulé du bouton corrigé -->
+							<!--<a href="#">--><input class="bouton" value="Lancer la recherche dans le site" type="submit"><!--</a> élément a invalide -->
+						</div>
+					</div>
+				</header>
+				<!-- définition du contenu principal -->
+				<main id="main" role="main" tabindex="-1">
+					<!-- h1 ajouté et reprenant le texte de l'image bandeau -->
+					<h1 class="sr-only">Bienvenue à l'UNEA</h1>
+					<div class="str_banner">
+						<div class="pav pav-espace-perso-home">
+							<div class="ctn_pav-content">
+								<h2>Votre espace personnel</h2>
+								<p>Connectez-vous à votre espace personnel en renseignant les champs ci-dessous.</p>
+								<!-- ajout étiquettes + caractères obligatoires -->
+								<label for="login" class="sr-only">Votre identifiant</label>
+								<input name="login" id="login" value="Votre identifiant" onclick="if(this.value=='Votre identifiant')this.value='';" type="text" aria-required="true">
+								<label for="pwd" class="sr-only">Votre mot de passe</label>
+								<input name="pwd" id="pwd" value="Votre mot de passe" onclick="if(this.value=='Votre mot de passe')this.value='';" type="password" aria-required="true">
+								<!-- modification de la sémantique (lien simulant bouton) -->
+								<div class="btn"><a href="javascript:document.formADW.submit();" role="button">Connexion à votre espace</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="str_content clearfix">
+						<div class="str_col-g" style="width: 730px;">
+							<!-- définition de la zone de navigation -->
+							<nav id="navigation" role="navigation" class="str_nav" tabindex="-1">
+								<ul class="clearfix">
+									<li class="i_accueil"><a href="http://unea.fr/index.php"><span class="sr-only">Accueil</span></a><!-- Lien vide corrigé --></li>
+									<li class="sousnav_n1">
+										<a href="http://unea.fr/union-nationale-entreprises-adaptees/l-unea/3/3/l-unea.htm">L'UNEA</a>
+										<div class="ctn_sousnav">
+											<ul class="clearfix"><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-unea/3/34/adh%EF%BF%BDrer-%EF%BF%BD-l-unea.htm">Adhérer à l'UNEA</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-unea/3/35/r%EF%BF%BDles-et-missions.htm">Rôles et Missions</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-unea/3/70/notre-%EF%BF%BDquipe.htm">Notre équipe</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-unea/3/63/nos-services.htm">Nos services</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-unea/3/36/les-instances-associatives.htm">les instances associatives</a></li><li class="sub sousnav_n2"><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-unea/3/136/les-vid%EF%BF%BDos-de-l-unea.htm"><b>Les vidéos de l'UNEA</b></a><ul><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-vid%EF%BF%BDos-de-l-unea/136/139/l-unea.htm">L'UNEA</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-vid%EF%BF%BDos-de-l-unea/136/140/les-entreprises-adapt%EF%BF%BDes.htm">Les Entreprises Adaptées</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-vid%EF%BF%BDos-de-l-unea/136/138/les-rencontres-politiques-et-institutionnelles.htm">Les rencontres politiques et institutionnelles</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-vid%EF%BF%BDos-de-l-unea/136/137/les-partenariats.htm">Les partenariats</a></li></ul></li></ul>
+										</div>
+									</li>
+									<li class="sousnav_n1"><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-entreprise-adaptee/4/4/l-entreprise-adaptee.htm">L'entreprise adaptée</a>
+										<div class="ctn_sousnav">
+											<ul class="clearfix"><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-entreprise-adaptee/4/37/les-entreprises-adapt%EF%BF%BDes.htm">Les Entreprises Adaptées</a></li><li class="sub sousnav_n2"><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-entreprise-adaptee/4/41/service-juridique-et-textes-legislatifs-et-lois.htm"><b>Service Juridique et Textes legislatifs et lois</b></a><ul><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/service-juridique-et-textes-legislatifs-et-lois/41/50/lois.htm">Lois</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/service-juridique-et-textes-legislatifs-et-lois/41/45/d%EF%BF%BDcrets-relatifs-aux-ea.htm">Décrets relatifs aux EA</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/service-juridique-et-textes-legislatifs-et-lois/41/46/arr%EF%BF%BDt%EF%BF%BDs-relatifs-aux-ea.htm">Arrêtés relatifs aux EA</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/service-juridique-et-textes-legislatifs-et-lois/41/47/circulaires-relatives-aux-ea.htm">Circulaires relatives aux EA</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/service-juridique-et-textes-legislatifs-et-lois/41/48/notes-dgefp.htm">Notes DGEFP</a></li></ul></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-entreprise-adaptee/4/84/sp%EF%BF%BDcificit%EF%BF%BD-du-mod%EF%BF%BDle-%EF%BF%BDconomique-ea.htm">Spécificité du modèle économique EA</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-entreprise-adaptee/4/118/cr%EF%BF%BDer-son-entreprise-adapt%EF%BF%BDe.htm">Créer son Entreprise Adaptée</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-entreprise-adaptee/4/949/l-obligation-d-emploi-de-travailleurs-handicap%EF%BF%BDs.htm">L'Obligation d'Emploi de Travailleurs Handicapés</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-entreprise-adaptee/4/39/avoir-recours-%EF%BF%BD-une-ea.htm">Avoir Recours à une EA</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-entreprise-adaptee/4/947/la-boite-%EF%BF%BD-outils.htm">La boite à outils</a></li></ul>
+										</div>
+									</li>
+									<li class="sousnav_n1"><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-filieres-metiers/5/5/les-filieres-metiers.htm">Les filières</a>
+										<div class="ctn_sousnav">
+											<ul class="clearfix"><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-filieres-metiers/5/78/les-fili%EF%BF%BDres.htm">Les Filières</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-filieres-metiers/5/1075/agences-conseil-en-communication.htm">Agences-conseil en communication</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-filieres-metiers/5/73/blanchisserie.htm">Blanchisserie</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-filieres-metiers/5/77/centre-d-appel.htm">Centre d'appel</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-filieres-metiers/5/79/conditionnement-et-logistique.htm">Conditionnement et logistique</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-filieres-metiers/5/80/deee.htm">DEEE</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-filieres-metiers/5/72/gestion-electronique-des-documents.htm">Gestion Electronique des Documents</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-filieres-metiers/5/81/impression.htm">Impression</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-filieres-metiers/5/866/informatique.htm">Informatique</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-filieres-metiers/5/82/m%EF%BF%BDtallurgie.htm">Métallurgie</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-filieres-metiers/5/605/prestations-administratives-et-tertiaires.htm">Prestations administratives et tertiaires</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-filieres-metiers/5/74/propret%EF%BF%BD-et-services-associ%EF%BF%BDs.htm">Propreté et services associés</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/les-filieres-metiers/5/75/travaux-paysagers.htm">Travaux paysagers</a></li></ul>
+										</div>
+									</li>
+									<li class="sousnav_n1"><a href="http://unea.fr/union-nationale-entreprises-adaptees/en-region/6/6/en-region.htm">En régions</a>
+										<div class="ctn_sousnav">
+											<ul class="clearfix"><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/en-region/6/96/l-unea-en-r%EF%BF%BDgion.htm">L'UNEA en région</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/en-region/6/125/carte-des-r%EF%BF%BDgions.htm">Carte des régions</a></li></ul>
+										</div>
+									</li>
+									<li class="sousnav_n1"><a href="http://unea.fr/union-nationale-entreprises-adaptees/partenaires/7/7/partenaires.htm">Partenaires</a>
+										<div class="ctn_sousnav">
+											<ul class="clearfix"><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/partenaires/7/1186/veille-sur-les-march%EF%BF%BDs-partenaires.htm">Veille sur les marchés partenaires</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/partenaires/7/120/les-partenariats-institutionnels.htm">Les partenariats institutionnels</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/partenaires/7/121/les-partenaires-%EF%BF%BDconomiques.htm">Les partenaires économiques</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/partenaires/7/122/les-partenariats-de-l-unea.htm">Les partenariats de l'UNEA</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/partenaires/7/213/les-partenaires-associatifs.htm">Les partenaires associatifs</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/partenaires/7/153/veille-sur-les-march%EF%BF%BDs-r%EF%BF%BDserv%EF%BF%BDs.htm">Veille sur les marchés réservés</a></li></ul>
+										</div>
+									</li>
+									<li class="sousnav_n1"><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-academie/9/9/l-academie.htm">L'Académie</a>
+										<div class="ctn_sousnav">
+											<ul class="clearfix"><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-academie/9/867/l-observatoire-des-m%EF%BF%BDtiers-et-des-comp%EF%BF%BDtences-en-entreprise-adapt%EF%BF%BDe.htm">L'Observatoire des Métiers et des Compétences en Entreprise Adaptée</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-academie/9/146/le-pacte-de-professionnalisation.htm">Le Pacte de professionnalisation</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-academie/9/739/cap-rsea.htm">CAP RSEA</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-academie/9/127/le-catalogue-des-formations.htm">Le catalogue des formations</a></li><li><a href="http://unea.fr/union-nationale-entreprises-adaptees/l-academie/9/738/e-formadapt,-le-logiciel-de-gpec-pour-les-ea.htm">E-FormAdapt, le logiciel de GPEC pour les EA</a></li></ul>
+										</div>
+									</li>
+								</ul>
+							</nav>
+							<div class="str_article clearfix">
+								<div class="str_duocol">
+									<div class="pav pav-actus">
+										<div class="ctn_pav-content clearfix">
+										<!-- h1 remplacé par h2 + h3 pour chaque actualité -->
+										<h2><strong>Actualités</strong> à la une</h2>
+										<!-- h3 sur voir toutes les actualités supprimé -->
+										<div class="align-right"><div class="liendroit"><p><a href="http://unea.fr/union-nationale-entreprises-adaptees/actualites/51/51/actualites.htm">Voir toutes nos actus</a></p></div></div>
+										<div class="car_home" id="car_home">
+											<div class="car_home-content"><div class="item"><div class="t_date">05/04/2017</div><h3>Calendrier des réunions régionales de printemps 2017</h3><div class="lien"><a href="http://unea.fr/union-nationale-entreprises-adaptees/actualites/51/1234/calendrier-des-r%EF%BF%BDunions-r%EF%BF%BDgionales-de-printemps-2017.htm">En savoir plus</a></div><div class="ctn_visuel"><p><img src="unea-index/20170403_11.jpg" alt="" height="148" width="150" class="border-0 align-left hspace5">Les
+				 réunions régionales de printemps s’organisent dans votre région. Nous 
+				publions le calendrier avec les premières dates annoncées pour ces 
+				prochains rendez-vous.</p>
+				</div><div class="lien"><a href="http://unea.fr/union-nationale-entreprises-adaptees/actualites/51/1234/calendrier-des-r%EF%BF%BDunions-r%EF%BF%BDgionales-de-printemps-2017.htm">En savoir plus</a></div></div><div class="item"><div class="t_date">04/04/2017</div><h3>Editorial<br>Contrat de développement : passons à la mise en œuvre</h3><div class="lien"><a href="http://unea.fr/union-nationale-entreprises-adaptees/actualites/51/1237/editorial%3Cbr%3Econtrat-de-d%EF%BF%BDveloppement-:-passons-%EF%BF%BD-la-mise-en-%EF%BF%BDuvre.htm">En savoir plus</a></div><div class="ctn_visuel"><p><img src="unea-index/20170403_13.jpg" alt="" height="100" width="150" class="border-0 align-left hspace-5">Pour
+				 rappel, le 9 mars dernier, deux ministres, Myriam El Khomri (travail) 
+				et Ségolène Neuville (handicap) ont apposé leur signature sur ce contrat
+				 qualifié « d'historique » prévoyant le financement de 5000 nouvelles 
+				aides au poste sur les cinq prochaines années.</p></div><div class="lien"><a href="http://unea.fr/union-nationale-entreprises-adaptees/actualites/51/1237/editorial%3Cbr%3Econtrat-de-d%EF%BF%BDveloppement-:-passons-%EF%BF%BD-la-mise-en-%EF%BF%BDuvre.htm">En savoir plus</a></div></div><div class="item"><div class="t_date">09/03/2017</div><h3>Communiqué de presse<br>Myriam El-Khomri s’engage sur la création de 5000 nouveaux postes dans les Entreprises Adaptées</h3><div class="lien"><a href="http://unea.fr/union-nationale-entreprises-adaptees/actualites/51/1221/communiqu%EF%BF%BD-de-presse%3Cbr%3Emyriam-el-khomri-s%E2%80%99engage-sur-la-cr%EF%BF%BDation-de-5000-nouveaux-postes-dans-les-entreprises-adapt%EF%BF%BDes.htm">En savoir plus</a></div><div class="ctn_visuel"><p><img src="unea-index/PSX_20170309_093203%25202.jpg" alt="" height="100" width="150" class="border-0 align-left hspace-5">C’est
+				 l’aboutissement d’un travail de plus de 18 mois mené par l’UNEA qui 
+				vient d’être validé ce matin au ministère du travail. C’est en effet un 
+				contrat historique pour le secteur adapté que vient de signer Myriam 
+				El-Khomri, Ministre du Travail, de l’Emploi, de la Formation 
+				professionnelle et du Dialogue social, en présence de Ségolène Neuville,
+				 Secrétaire d’Etat chargée des Personnes handicapées et de la Lutte 
+				contre l’exclusion.</p>
+				</div><div class="lien"><a href="http://unea.fr/union-nationale-entreprises-adaptees/actualites/51/1221/communiqu%EF%BF%BD-de-presse%3Cbr%3Emyriam-el-khomri-s%E2%80%99engage-sur-la-cr%EF%BF%BDation-de-5000-nouveaux-postes-dans-les-entreprises-adapt%EF%BF%BDes.htm">En savoir plus</a></div></div><div class="item"><div class="t_date">06/03/2017</div><h3>Signature du Contrat de développement pour les Entreprises Adaptées le 9 mars 2017</h3><div class="lien"><a href="http://unea.fr/union-nationale-entreprises-adaptees/actualites/51/1220/signature-du-contrat-de-d%EF%BF%BDveloppement-pour-les-entreprises-adapt%EF%BF%BDes-le-9-mars-2017.htm">En savoir plus</a></div><div class="ctn_visuel"><p><img src="unea-index/20170306_07.jpg" alt="" height="100" width="150" class="border-0 align-left hspace-5">Myriam
+				 El-Khomri, Ministre du Travail, de l’Emploi, de la Formation 
+				professionnelle et du Dialogue sociale, signe le jeudi 9 mars prochain, 
+				en présence de Ségolène Neuville, Secrétaire d’Etat chargée des 
+				Personnes handicapées et de la Lutte contre l’exclusion, le contrat de 
+				développement porté par l’UNEA.</p></div><div class="lien"><a href="http://unea.fr/union-nationale-entreprises-adaptees/actualites/51/1220/signature-du-contrat-de-d%EF%BF%BDveloppement-pour-les-entreprises-adapt%EF%BF%BDes-le-9-mars-2017.htm">En savoir plus</a></div></div><div class="item"><div class="t_date">22/02/2017</div><h3>Editorial du 22 février 2017<br>Notification des aides au poste 2017 : déception et incompréhension </h3><div class="lien"><a href="http://unea.fr/union-nationale-entreprises-adaptees/actualites/51/1209/editorial-du-22-f%EF%BF%BDvrier-2017%3Cbr%3Enotification-des-aides-au-poste-2017-:-d%EF%BF%BDception-et-incompr%EF%BF%BDhension-.htm">En savoir plus</a></div><div class="ctn_visuel"><p><img src="unea-index/20170206_08.JPG" alt="" height="187" width="150" class="border-0 align-left hspace-5"></p>
+				<p>Lorsque les bleus du projet de loi de finances 2017 sont apparus au 
+				mois d’octobre dernier, la prise en compte des besoins de développement 
+				des Entreprises Adaptées était oubliée. La mobilisation de toutes les 
+				forces vives de l’UNEA a été enclenchée afin de corriger une situation 
+				d’absence de soutien à notre secteur.</p>
+				</div><div class="lien"><a href="http://unea.fr/union-nationale-entreprises-adaptees/actualites/51/1209/editorial-du-22-f%EF%BF%BDvrier-2017%3Cbr%3Enotification-des-aides-au-poste-2017-:-d%EF%BF%BDception-et-incompr%EF%BF%BDhension-.htm">En savoir plus</a></div></div>							</div>
+										</div>
+										<div class="navi"><!-- a sans href remplacés par des button -->
+											<button type="button" class="active"><span class="sr-only">Actualité 1</span></button>
+											<button type="button"><span class="sr-only">Actualité 2</span></button>
+											<button type="button"><span class="sr-only">Actualité 3</span></button>
+											<button type="button"><span class="sr-only">Actualité 4</span></button>
+											<button type="button"><span class="sr-only">Actualité 5</span></button>
+										</div>
+										</div>
+									</div>
+								</div>
+								<div class="str_spacer-h-10"></div>
+								<div class="str_unicol">
+									<!-- ajout des attributs alt pertinents + structure -->
+									<ul>
+										<li>
+											<a href="http://unea.fr/union-nationale-entreprises-adaptees/l-academie/9/9/l-academie.htm"><img src="unea-index/b_pav-academie_home.gif" alt="Académie UNEA"></a>
+											<div class="str_spacer-v-10"></div>
+										</li>
+										<li>
+											<a href="http://unea.fr/union-nationale-entreprises-adaptees/adh%EF%BF%BDrer-%EF%BF%BD-l-unea/34/34/adh%EF%BF%BDrer-%EF%BF%BD-l-unea.htm"><img src="unea-index/b_pav-adherer_home.gif" alt="Adhérer à l'UNEA"></a>
+											<!--<div class="pav pav-academie-home">
+												<div class="ctn_pav-content">
+													<h3><a href="../../../../union-nationale-entreprises-adaptees/l-academie/9/9/l-academie.htm"><img src="images/t_pav-academie-home.gif" border="0"/></a></h3>
+													<p>L'UNEA propose des cycles de formation pour dirigeant et encadrant d'Entreprise Adaptée.</p>
+													<div class="lien"><a href="../../../../union-nationale-entreprises-adaptees/l-academie/9/9/l-academie.htm">Voir nos formations</a></div>
+												</div>
+											</div>-->
+											<div class="str_spacer-v-10"></div>
+										</li>
+										<li>
+											<a href="http://unea.fr/union-nationale-entreprises-adaptees/presse-et-publications/10/10/presse-et-publications.htm"><img src="unea-index/b_pav-presse_home.gif" alt="Presse et Publications"></a>
+											<div class="str_spacer-v-10"></div>
+										</li>
+										<li>
+											<a href="http://www.unea.fr/placeMarches/sos_aides_au_poste.asp"><img src="unea-index/b_pav-sos_home.gif" alt="SOS Aide au poste"></a>
+											<!--<div class="pav pav-presse-home">
+												<div class="ctn_pav-content">
+													<h3>presse et publications</h3>
+													<p><img src="images/v_pav-presse-home.jpg" align="left" />Retrouvez dans cet espace l'intégralité de nos communiqués de presse, ainsi que le dernier numéro de ..., le magazine des Entreprises Adaptées.</p>
+													<div class="lien"><a href="<PHP lien($ID_PUBLICATIONS, $ID_PUBLICATIONS, $db) >">Accédez à l'espace presse et publications</a></div>
+												</div>
+											</div>-->
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="str_spacer-h-10"></div>
+						<div class="str_col-d">
+							<div class="str_paves">
+								<div class="pav pav-annuaire">
+									<div class="ctn_pav-content">
+										<script type="text/javascript">
+											function rechercheAnnuaire() {
+												var sMot;
+												sMot = "";
+												if (document.getElementById) { //IE5 et NS6
+													sMot = document.getElementById("idRechAnnuaire").value;
+												}
+												if ((document.all)&&(!document.getElementById)) { //IE4 seul
+													sMot = document.all["idRechAnnuaire"].value;
+												}
+												if (document.layers) { //NS4.X seul
+													sMot = document.layers["idRechAnnuaire"].value;
+												}
+												window.open("../../../../union-nationale-entreprises-adaptees/annuaire-unea/71/71/annuaire-unea.htm?idRechAnnuaire="+sMot,'_self');
+											}
+										</script>
+										<!-- h2 ajouté reprenant le titre du bloc (fond) -->
+										<h2 class="sr-only">L'annuaire des entreprises adaptées</h2>
+										<!-- ajout étiquette -->
+										<label for="idRechAnnuaire" class="sr-only">Rechercher une entreprise adaptée</label>
+										<input name="idRechAnnuaire" id="idRechAnnuaire" value="Trouvez une EA..." onfocus="javascript:this.value=''" type="text">
+										<!-- modification de la sémantique (lien simulant bouton) + intitulé -->
+										<div class="btn rechercher"><a href="javascript:rechercheAnnuaire();" role="button" aria-label="Lancer la recherche d'une entreprise adaptée">Rechercher</a></div>
+										<!-- alt vidé car image de décoration -->
+										<div class="btn recherche-geo"><a href="http://unea.fr/union-nationale-entreprises-adaptees/annuaire-unea/71/71/annuaire-unea.htm?typeRechAnnuaire=3#ancre_annuaire"><img src="unea-index/France.gif" alt="" width="15"> Recherche géographique</a></div>
+									</div>
+								</div>
+								<div class="str_spacer-v-10"></div>
+								<div class="pav pav-place" onclick="location.href='../../../../union-nationale-entreprises-adaptees/place-de-marche-unea/69/69/place-de-marche-unea.htm'">
+									<div class="ctn_pav-content">
+										<!-- h3 remplacé par h2 -->
+										<h2>La place de marché <strong>UNEA</strong></h2>
+										<p>Entreprises et administrations,<br><strong>rencontrez les Entreprises Adaptées</strong><br>sur www.unea.fr.</p>
+										<div class="ctn_etapes">
+											<ul>
+												<li class="etape1">Déposez vos demandes de prestations</li>
+												<li class="etape2">Consultez les réponses des Entreprises Adaptées</li>
+												<li class="etape3">Consultez les demandes de prestations*</li>
+											</ul>
+											<p class="t_mention">* Réponses réservées aux adhérents</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="str_partenaires clearfix">
+						<!-- div remplacé par h2 -->
+						<h2 class="t_partenaires">Nos partenaires</h2>
+						<div class="shadow"></div>
+						<!-- ajout des structures pour les liens partenaires -->
+						<!-- alt pertinent renseigné (reprise des title présents sur les liens et déplacement des title) + mention nouvelle fenetre -->
+						<div class="ctn_bandeau" id="scroller">
+							<div class="ctn_bandeau-content clearfix" style="left: -1600px;">
+								<div class="item cloned"></div>
+								<div class="item">
+									<ul>
+										<li><a href="#" target="_blank"><img src="unea-index/logo_aubay_web.jpg" alt="AUBAY (nouvelle fenêtre)" title="AUBAY (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/BNP_Paribas_3.jpg" alt="BNP Paribas (nouvelle fenêtre)" title="BNP Paribas (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/logobred.gif" alt="BRED - Banque populaire, banque et assurance (nouvelle fenêtre)" title="BRED - Banque populaire, banque et assurance (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/CGI_logo.jpg" alt="CGI (nouvelle fenêtre)" title="CGI (nouvelle fenêtre)" height="50"></a></li>
+									</ul>
+								</div>
+								<div class="item">
+									<ul>
+										<li><a href="#" target="_blank"><img src="unea-index/CNP_assurances_2.jpg" alt="CNP Assurances (nouvelle fenêtre)" title="CNP Assurances (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/logo_engie_cofely.png" alt="ENGIE Cofely (nouvelle fenêtre)" title="ENGIE Cofely (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/Enedis.png" alt="ENEDIS - L'électricité en réseau (nouvelle fenêtre)" title="ENEDIS - L'électricité en réseau (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/IFP_mai2013.jpg" alt="IFP - Energies nouvelles (nouvelle fenêtre)" title="IFP - Energies nouvelles (nouvelle fenêtre)" height="50"></a></li>
+									</ul>
+								</div>
+								<div class="item">
+									<ul>
+										<li><a href="#" target="_blank"><img src="unea-index/KPMG_mai2013.jpg" alt="KPMG (nouvelle fenêtre)" title="KPMG (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/radio_france.png" alt="Radio France (nouvelle fenêtre)" title="Radio France (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/RICOH_mai2013.jpg" alt="RICOH - Imagine. Change. (nouvelle fenêtre)" title="RICOH - Imagine. Change. (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/sage_logo.jpg" alt="SAGE (nouvelle fenêtre)" title="SAGE (nouvelle fenêtre)" height="50"></a></li>
+									</ul>
+								</div>
+								<div class="item">
+									<ul>
+										<li><a href="#" target="_blank"><img src="unea-index/logo_SCC.png" alt="SCC - Technology Solutions Provider (nouvelle fenêtre)" title="SCC - Technology Solutions Provider (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/SNCF_mai2013.jpg" alt="SNCF (nouvelle fenêtre)" title="SNCF (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/societe-generale.png" alt="Société Générale (nouvelle fenêtre)" title="Société Générale (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/logo_sopra_steria.jpg" alt="Sopra Steria (nouvelle fenêtre)" title="Sopra Steria (nouvelle fenêtre)" height="50"></a></li>
+									</ul>
+								</div>
+								<div class="item"></div>
+								<div class="item cloned">
+									<ul>
+										<li><a href="#" target="_blank"><img src="unea-index/logo_aubay_web.jpg" alt="AUBAY (nouvelle fenêtre)" title="AUBAY (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/BNP_Paribas_3.jpg" alt="BNP Paribas (nouvelle fenêtre)" title="BNP Paribas (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/logobred.gif" alt="BRED - Banque populaire, banque et assurance (nouvelle fenêtre)" title="BRED - Banque populaire, banque et assurance (nouvelle fenêtre)" height="50"></a></li>
+										<li><a href="#" target="_blank"><img src="unea-index/CGI_logo.jpg" alt="CGI (nouvelle fenêtre)" title="CGI (nouvelle fenêtre)" height="50"></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
+				<!-- définition de la zone de pied de page -->
+				<footer role="contentinfo" class="str_footer clearfix">
+					<!-- déplacement des liens avant copyright -->
+					<div class="str_links-l">
+						<ul>
+							<li><a href="http://unea.fr/union-nationale-entreprises-adaptees/salle-de-presse/13/13/salle-de-presse.htm">Salle de presse</a>&nbsp;|&nbsp;</li>
+							<li><a href="http://unea.fr/union-nationale-entreprises-adaptees/liens-utiles/14/14/liens-utiles.htm">Liens utiles</a>&nbsp;|&nbsp;</li>
+							<li><a href="http://unea.fr/union-nationale-entreprises-adaptees/contact/11/11/contact.htm">Contacts</a></li>
+						</ul>
+					</div>
+					<div class="str_links-r">
+						<a href="http://unea.fr/union-nationale-entreprises-adaptees/informations-legales/15/15/informations-legales.htm">Infos légales</a>&nbsp;|&nbsp;Tous droits réservés UNEA 2012
+					</div>
+				</footer>
+			</div>
+			<script type="text/javascript">
+			
+			 /* var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-5517453-1']);
+			  _gaq.push(['_trackPageview']);
+			
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })(); */
+			
+			</script>
+		</form>
+	</body>
+</html>
